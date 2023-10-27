@@ -6,7 +6,7 @@ xhr.open('GET', 'https://restcountries.com/v3.1/all', true);
 
 xhr.onload = function () {
   if (xhr.status >= 200 && xhr.status < 400) {
-    var data = SON.parse(xhr.responseText);
+    var data = JSON.parse(xhr.responseText);
 
     data.forEach(function (country) {
       var flag = country.flags.svg;
